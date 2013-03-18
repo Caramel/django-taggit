@@ -63,7 +63,7 @@ class TaggableRel(ManyToManyRel):
 
 class TaggableManager(RelatedField):
     def __init__(self, verbose_name=_("Tags"),
-        help_text=_("A comma-separated list of tags."), through=None, blank=False, related_name=None, restricted=True):
+        help_text=_("A comma-separated list of tags."), through=None, blank=False, related_name=None, restricted=False):
         self.through = through or TaggedItem
         self.rel = TaggableRel(related_name)
         self.verbose_name = verbose_name
